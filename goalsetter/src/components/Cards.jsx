@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Card from './Card'
+import '../css/Card.css'
 
 // Firebase
 import firebase from "firebase/compat/app"
@@ -23,8 +25,14 @@ function Cards(props) {
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         })
 
-        alert("Card Added!")
         setCardName('')
+    }
+
+    const deleteCard = async (cardName) => {
+        cardsRef.where("name", "==", cardName).get()
+        .then(snapshot => {
+            snapshot.docs[0].ref.delete()
+        })
     }
 
     return (
@@ -46,7 +54,11 @@ function Cards(props) {
 
             <div className='cards-display'>
                 {cards && cards.map((card, key) => 
-                    <div key={key}>{card.name}</div>
+                    <Card
+                        key={key}
+                        card={card}
+                        onDelete={() => deleteCard(card.name)}
+                    />
                 )}
             </div>
         </div>
