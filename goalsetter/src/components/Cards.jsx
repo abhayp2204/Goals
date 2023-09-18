@@ -57,6 +57,7 @@ function Cards(props) {
                     <Card
                         key={key}
                         card={card}
+                        image={Math.floor(Math.random() * 62) + 1}
                         onDelete={() => deleteCard(card.name)}
                     />
                 )}
