@@ -2,7 +2,13 @@
     margin-top: 10px;
 }
 
+.dmy-tab-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .dmy {
+    width: 200px;
     background-color: #444444;
     color: gold;
     border: 1px solid gold;
@@ -10,15 +16,4 @@
 }
 .dmy:hover {
     background-color: #222222;
-}
-
-.button {
-    transition: 300ms ease-in-out;
-    transform-origin: center center;
-    width: 100%;
-    /* text-align: center; */
-}
-
-.button:hover {
-    transform: scale(1.1);
 }
