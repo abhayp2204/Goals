@@ -10,9 +10,10 @@ function Card(props) {
         height: '400px',
         color: 'white',
         fontWeight: 'bolder',
-        fontSize: hovered? '50px' : '40px',
+        fontSize: hovered? '48px' : '40px',
         margin: '20px',
         backgroundColor: hovered? '#95C623': 'transparent',
+        backgroundColor: hovered? '#22c99f': 'transparent',
         transition: '0.3s ease-in-out', // Add transition for font size change
     };
     
@@ -39,11 +40,18 @@ function Card(props) {
             <div className='card-title'>
                 {props.card.name}
             </div>
+            
             <button
                 onClick={() => props.onDelete()} 
                 className="delete-button"
             >
                 X
+            </button>
+            <button
+                onClick={() => props.onComplete()} 
+                className="complete-button"
+            >
+                ✔
             </button>
         </div>
     );

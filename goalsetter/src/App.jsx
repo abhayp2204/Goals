@@ -15,6 +15,7 @@ import { auth, firestore } from './firebase';
 // components
 import SignIn from './components/auth/SignIn'
 import Home from './components/Home'
+import Timeline from './components/Timeline';
 
 function App() {
     const [user] = useAuthState(auth)
@@ -30,6 +31,10 @@ function App() {
                 <Route
                     path='/'
                     element={<Home />}
+                />
+                <Route
+                    path='/timeline'
+                    element={<Timeline />}
                 />
             </Routes>
         </Router>

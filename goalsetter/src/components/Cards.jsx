@@ -12,16 +12,19 @@ import { useSendSignInLinkToEmail } from 'react-firebase-hooks/auth'
 
 function Cards(props) {
     const cardsRef = firestore.collection(props.type)
+    const timeRef = firestore.collection('timeline')
+
     const [cardName, setCardName] = useState("")
 
     const query = cardsRef.orderBy('createdAt').limit(25)
     const [cards] = useCollectionData(query, { idField: 'id' })
 
-    const addCard = async(e) => {
+    const addCard = async (e) => {
         e.preventDefault()
 
         await cardsRef.add({
             name: cardName,
+            image: Math.floor(Math.random() * 62) + 1,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         })
 
@@ -30,8 +33,15 @@ function Cards(props) {
 
     const deleteCard = async (cardName) => {
         cardsRef.where("name", "==", cardName).get()
-        .then(snapshot => {
-            snapshot.docs[0].ref.delete()
+            .then(snapshot => {
+                snapshot.docs[0].ref.delete()
+            })
+    }
+
+    const completeCard = async (cardName) => {
+        await timeRef.add({
+            cardName: cardName,
+            completedAt: firebase.firestore.FieldValue.serverTimestamp(),
         })
     }
 
@@ -53,12 +63,13 @@ function Cards(props) {
             </div>
 
             <div className='cards-display'>
-                {cards && cards.map((card, key) => 
+                {cards && cards.map((card, key) =>
                     <Card
                         key={key}
                         card={card}
-                        image={Math.floor(Math.random() * 62) + 1}
+                        image={card.image}
                         onDelete={() => deleteCard(card.name)}
+                        onComplete={() => completeCard(card.name)}
                     />
                 )}
             </div>

@@ -10,7 +10,3 @@
     text-decoration: None;
     transition: 300ms ease-in-out;
 }
-
-.linkstyle:hover {
-    transform: scale(2);
-}

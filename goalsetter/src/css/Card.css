@@ -53,8 +53,53 @@
     height: 30px;
     border: transparent;
     border-radius: 100%;
+    transition: 300ms ease-in-out;
 }
 .delete-button:hover {
     cursor: pointer;
-    background-color: rgb(82, 69, 69);
+    background-color: rgb(202, 68, 68);
+}
+
+.add-card-container {
+    margin-left: 35px;
+}
+
+.input-card-name {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.add-card-button {
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(10, 157, 10);
+    font-weight: bold;
+    transition: 300ms ease-in-out;
+}
+
+.add-card-button:hover {
+    cursor: pointer;
+    background-color: rgb(46, 216, 46);
+}
+
+.complete-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    background-color: rgb(23, 25, 26);
+    font-weight: bold;
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    border: transparent;
+    border-radius: 100%;
+    transition: 300ms ease-in-out;
+}
+.complete-button:hover {
+    cursor: pointer;
+    background-color: rgb(42, 144, 5);
 }
