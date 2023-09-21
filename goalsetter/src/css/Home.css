@@ -33,3 +33,10 @@
 .active:hover {
     opacity: 1;
 }
+
+.date-display {
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 35px;
+    margin-top: 10px;
+}

@@ -25,11 +25,18 @@ function Cards(props) {
         await cardsRef.add({
             name: cardName,
             image: Math.floor(Math.random() * 62) + 1,
+            date: props.date,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         })
 
         setCardName('')
     }
+
+    const filteredCards = cards && cards.filter(card => {
+        const cardDate = card.createdAt.toDate()
+        console.log("cardDate = ", cardDate)
+        return cardDate.getDate() === props.date.getDate() && cardDate.getMonth() === props.date.getMonth() && cardDate.getFullYear() === props.date.getFullYear()
+    })
 
     const deleteCard = async (cardName) => {
         cardsRef.where("name", "==", cardName).get()
@@ -64,7 +71,7 @@ function Cards(props) {
             </div>
 
             <div className='cards-display'>
-                {cards && cards.map((card, key) =>
+                {filteredCards && filteredCards.map((card, key) =>
                     <Card
                         key={key}
                         card={card}

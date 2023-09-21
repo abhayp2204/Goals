@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../css/Home.css';
 import Cards from './Cards';
 import Calendar from './Calendar';
-import Days from './Days'
+import Days from './Days';
 
 function Home() {
     const [span, setSpan] = useState('day');
@@ -12,6 +12,12 @@ function Home() {
 
     const toggleCalendar = () => {
         setShowCalendar(!showCalendar);
+    }
+
+    // Function to get the full month name
+    const getFullMonthName = () => {
+        const options = { month: 'long' };
+        return date.toLocaleDateString('en-US', options);
     }
 
     return (
@@ -43,7 +49,7 @@ function Home() {
                 </div>
             </div>
 
-            <h1>{date.getDate()} / {1 + date.getMonth()} / {date.getFullYear()}</h1>
+            <div className='date-display'>{date.getDate()} {getFullMonthName()}, {date.getFullYear()}</div>
 
             {showCalendar && (
                 <Calendar
@@ -56,7 +62,7 @@ function Home() {
             <Days date={date} setDate={setDate} />
 
             <div className="cards">
-                <Cards type={span} />
+                <Cards type={span} date={date} />
             </div>
         </div>
     );
