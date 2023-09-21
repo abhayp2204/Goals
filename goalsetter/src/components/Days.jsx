@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Days.css'
+import '../css/Days.css';
 
 function Days({ date, setDate }) {
     // Get the total number of days in the current month
@@ -15,7 +15,7 @@ function Days({ date, setDate }) {
             {daysInMonth.map(day => (
                 <div
                     key={day}
-                    className="day-item"
+                    className={`day-item ${date.getDate() === day ? 'day-active' : ''}`} // Apply "active" class conditionally
                     onClick={() => setDate(new Date(date.getFullYear(), date.getMonth(), day))}
                 >
                     {day}

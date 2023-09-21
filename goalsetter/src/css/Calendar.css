@@ -44,7 +44,7 @@
 }
 
 .calendar-select {
-    background-color: rgb(45, 156, 45);
+    background-color: #C1292E;
     border: none;
     padding: 10px;
     border-radius: 10px;
@@ -55,6 +55,6 @@
 
 .calendar-select:hover {
     cursor: pointer;
-    background-color: rgb(30, 199, 30);
+    background-color: #e70f16;
     transform: scale(1.1);
 }

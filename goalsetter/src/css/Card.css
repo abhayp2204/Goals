@@ -75,14 +75,14 @@
     margin-left: 20px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(10, 157, 10);
+    background-color: #C1292E;
     font-weight: bold;
     transition: 300ms ease-in-out;
 }
 
 .add-card-button:hover {
     cursor: pointer;
-    background-color: rgb(46, 216, 46);
+    background-color: #e70f16;
 }
 
 .complete-button {
@@ -101,5 +101,5 @@
 }
 .complete-button:hover {
     cursor: pointer;
-    background-color: rgb(42, 144, 5);
+    background-color: #C1292E;
 }

@@ -19,7 +19,16 @@
     border-radius: 8px;
 }
 
+.day-active {
+    background-color: #C1292E;
+    color: white;
+    border: 1px solid white;
+}
+
+.day-active:hover {
+    background-color: #e70f16;
+}
+
 .day-item:hover {
     cursor: pointer;
 }
-
