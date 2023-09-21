@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Home.css';
 import Cards from './Cards';
+import Calendar from './Calendar';
 
 function Home() {
-  const [span, setSpan] = useState('day');
+    const [span, setSpan] = useState('day')
+    const [showCalendar, setShowCalendar] = useState(false);
+    const [date, setDate] = useState(new Date());
+
+    const toggleCalendar = () => {
+        setShowCalendar(!showCalendar);
+    }
+    
 
     return (
         <div className="home">
@@ -27,13 +35,29 @@ function Home() {
                 >
                     Year
                 </div>
-                <Link
-                    className="linkstyle dmy"
-                    to='/timeline'
+                <div
+                    className="dmy"
+                    onClick={toggleCalendar}
                 >
-                    Timeline
-                </Link>
+                    Calendar
+                </div>
             </div>
+
+            <h1>{date.getDate()} / {1 + date.getMonth()} / {date.getFullYear()}</h1>
+            {showCalendar && (
+                <Calendar
+                    selectedDate={date}
+                    setSelectedDate={setDate}
+                    closeCalendar={toggleCalendar}
+                />
+            )}
+            <div>
+                {console.log(date.getYear())}
+            </div>
+
+
+
+
 
             <div className="cards">
                 <Cards type={span} />

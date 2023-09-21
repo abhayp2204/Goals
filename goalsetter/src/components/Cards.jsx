@@ -43,6 +43,7 @@ function Cards(props) {
             cardName: cardName,
             completedAt: firebase.firestore.FieldValue.serverTimestamp(),
         })
+        deleteCard(cardName)
     }
 
     return (

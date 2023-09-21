@@ -10,7 +10,7 @@ function Card(props) {
         height: '400px',
         color: 'white',
         fontWeight: 'bolder',
-        fontSize: hovered? '48px' : '40px',
+        fontSize: hovered? '40px' : '35px',
         margin: '20px',
         backgroundColor: hovered? '#95C623': 'transparent',
         backgroundColor: hovered? '#22c99f': 'transparent',
