@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import '../css/Home.css';
 import Cards from './Cards';
 import Calendar from './Calendar';
+import Days from './Days'
 
 function Home() {
-    const [span, setSpan] = useState('day')
+    const [span, setSpan] = useState('day');
     const [showCalendar, setShowCalendar] = useState(false);
     const [date, setDate] = useState(new Date());
 
     const toggleCalendar = () => {
         setShowCalendar(!showCalendar);
     }
-    
 
     return (
         <div className="home">
@@ -44,6 +44,7 @@ function Home() {
             </div>
 
             <h1>{date.getDate()} / {1 + date.getMonth()} / {date.getFullYear()}</h1>
+
             {showCalendar && (
                 <Calendar
                     selectedDate={date}
@@ -51,13 +52,8 @@ function Home() {
                     closeCalendar={toggleCalendar}
                 />
             )}
-            <div>
-                {console.log(date.getYear())}
-            </div>
 
-
-
-
+            <Days date={date} setDate={setDate} />
 
             <div className="cards">
                 <Cards type={span} />
