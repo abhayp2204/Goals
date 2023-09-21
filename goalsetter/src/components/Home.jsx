@@ -49,11 +49,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className='date-display'>
-                <div className='ddb ddd'>{date.getDate()}</div>
-                <div className='ddb ddm'>{getFullMonthName()}</div>
-                <div className='ddb ddy'>{date.getFullYear()}</div>
-            </div>
+            <div className='date-display'>{date.getDate()} {getFullMonthName()}, {date.getFullYear()}</div>
 
             {showCalendar && (
                 <Calendar

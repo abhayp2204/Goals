@@ -58,3 +58,29 @@
     background-color: #e70f16;
     transform: scale(1.1);
 }
+
+.scrollable-list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+    border: none;
+}
+
+.scrollable-list label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.scrollable-list input,
+.scrollable-list select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}

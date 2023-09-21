@@ -33,6 +33,7 @@ function Cards(props) {
     }
 
     const filteredCards = cards && cards.filter(card => {
+        if (card.createdAt === null) return
         const cardDate = card.createdAt.toDate()
         console.log("cardDate = ", cardDate)
         return cardDate.getDate() === props.date.getDate() && cardDate.getMonth() === props.date.getMonth() && cardDate.getFullYear() === props.date.getFullYear()

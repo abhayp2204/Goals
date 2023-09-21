@@ -35,10 +35,6 @@
 }
 
 .date-display {
-    margin-left: 20px;
-}
-
-.ddb {
     display: inline-block;
     white-space: nowrap;
 
@@ -49,12 +45,6 @@
 
     font-weight: bold;
     font-size: 30px;
-    margin-left: 10px;
+    margin-left: 35px;
     margin-top: 10px;
-    transition: 300ms ease-in-out;
-}
-
-.ddb:hover {
-    cursor: pointer;
-    background-color: #e70f16;
 }
